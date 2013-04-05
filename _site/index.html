@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Labs Team - CityIndex - Labs Team</title>
+    <title>Daithi Coombes - CityIndex - Labs Team</title>
     
     <meta name="author" content="Daithi">
 
@@ -55,14 +55,6 @@
   
     
       
-    
-  
-    
-      
-    
-  
-    
-      
       	
       	<li><a href="/pages.html">Pages</a></li>
       	
@@ -92,6 +84,57 @@
 <div id="content">
 	
 
+<ul class="nav nav-tabs">
+    <li class="active">
+        <a href="#repo-live" data-toggle="tab">Live</a>
+    </li>
+    <li>
+        <a href="#repo-build" data-toggle="tab">Build</a>
+    </li>
+    <li>
+        <a href="#repo-icebox" data-toggle="tab">Icebox</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane active" id="repo-live">
+        
+            
+                
+                    <article class="unit-article layout-post">
+                        <div class="unit-inner unit-article-inner">
+                            <div class="content">
+                                <div class="bd">
+                                    <div class="entry-content">
+                                        WP_Extend
+                                        <p>This is the post on the WP_Extend thingy. Which needs more research due to <a href='http://lostechies.com/chadmyers/2010/02/13/composition-versus-inheritance/'>composition over inheritence</a> mentioned by a work collegue</p>
+                                    </div><!-- entry-content -->
+                                </div><!-- bd -->
+                            </div><!-- content -->
+                        </div><!-- unit-inner -->
+                        <hr/>
+                    </article>
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+    </div>
+    <div class="tab-pane active" id="repo-live">
+    </div>
+    <div class="tab-pane active" id="repo-live">
+    </div>
+</div>
+
+
 	<section>
 		<h2>On GitHub</h2>
 		<div id="gh_repos">
@@ -106,7 +149,6 @@
 		
 	</section>
 
-
 <script type="text/javascript">
 // <!--
     $.ajax({
@@ -117,7 +159,7 @@
         success: function(resp) {
             if (resp.data.length > 0) {
                 $('#gh_repos').html('<ul></ul>');
-                for(var i = 0; i < $(resp.data).length && i < 5; i++)
+                for(var i = 0; i < $(resp.data).length; i++)
                 {
                    $('#gh_repos > ul').append(
                         '<li><a href="' + resp.data[i]['html_url'] + '">'
