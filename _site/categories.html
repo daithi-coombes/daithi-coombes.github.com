@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Labs Team - CityIndex - Labs Team</title>
+    <title>Labs Team - Categories</title>
     
     <meta name="author" content="Daithi">
 
@@ -72,7 +72,7 @@
     
       
       	
-      	<li><a href="/categories.html">Categories</a></li>
+      	<li class="active"><a href="/categories.html" class="active">Categories</a></li>
       	
       
     
@@ -92,49 +92,46 @@
 <div id="content">
 	
 
-	<section>
-		<h2>On GitHub</h2>
-		<div id="gh_repos">
-			<p>Status updating...</p>
-		</div>
-		
-			<a href="http://github.com/daithi-coombes"
-				title="Follow daithi-coombes on GitHub" id="followGitHub" class="noBg">
-				<img src="http://github.com/favicon.ico"/>
-				<span>Follow me on GitHub</span>
-			</a>
-		
-	</section>
+<ul class="tag_box inline">
+  
+  
 
 
-<script type="text/javascript">
-// <!--
-    $.ajax({
-        type: "GET",
-        url: 'https://api.github.com/users/daithi-coombes/repos?callback=?',
-        data: { type: "all", sort: "pushed", direction: "desc" },
-        dataType: 'json',
-        success: function(resp) {
-            if (resp.data.length > 0) {
-                $('#gh_repos').html('<ul></ul>');
-                for(var i = 0; i < $(resp.data).length && i < 5; i++)
-                {
-                   $('#gh_repos > ul').append(
-                        '<li><a href="' + resp.data[i]['html_url'] + '">'
-                        + resp.data[i]['name'] + '</a>'
-                        + '<p>'
-                        + (resp.data[i]['description'] ? resp.data[i]['description'] : '(No description)')
-                        + '</p></li>'
-                    );
-                }
-            }
-            else {
-                $('#gh_repos').html('<p>No public repositories.</p>');
-            }
-        }
-    });
-// -->
-</script>
+  
+     
+    	<li><a href="/categories.html#lessons-ref">
+    		lessons <span>1</span>
+    	</a></li>
+    
+  
+
+
+</ul>
+
+
+ 
+  <h2 id="lessons-ref">lessons</h2>
+  <ul>
+      
+    
+
+
+  
+    
+      
+      	
+      	<li><a href="/lessons/2011/12/29/jekyll-introduction">Jekyll Introduction</a></li>
+      	
+      
+    
+  
+
+
+
+  </ul>
+
+
+
 </div>
 
       </div>
