@@ -28,7 +28,10 @@ tagline: Labs Team projects
                                 <div class="bd">
                                     <div class="entry-content">
                                         {{ post.title }}
-                                        {{ post.content }}
+                                        {% capture excerpt %}
+                                            {{ post.content | truncatewords: 20, '' }}
+                                        {% endcapture %}
+                                        {{ excerpt }}
                                     </div><!-- entry-content -->
                                 </div><!-- bd -->
                             </div><!-- content -->

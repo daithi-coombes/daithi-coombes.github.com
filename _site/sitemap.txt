@@ -4,5 +4,6 @@ http://daithi-coombes.github.com/sitemap.txt
 http://daithi-coombes.github.com/pages.html
 http://daithi-coombes.github.com/categories.html
 
+http://daithi-coombes.github.com/2013/04/06/wp-api-connection-manager
 http://daithi-coombes.github.com/2013/04/05/wp_extend
 http://daithi-coombes.github.com/lessons/2011/12/29/jekyll-introduction
