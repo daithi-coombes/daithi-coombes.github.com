@@ -5,6 +5,7 @@ tagline: Labs Team projects
 ---
 {% include JB/setup %}
 
+<div class="row-fluid">
 <ul class="nav nav-tabs">
     <li class="active">
         <a href="#repo-live" data-toggle="tab">Live</a>
@@ -16,6 +17,7 @@ tagline: Labs Team projects
         <a href="#repo-icebox" data-toggle="tab">Icebox</a>
     </li>
 </ul>
+</div>
 
 <div class="tab-content">
     <div class="tab-pane active" id="repo-live">
@@ -32,6 +34,13 @@ tagline: Labs Team projects
                                             {{ post.content | truncatewords: 20, '' }}
                                         {% endcapture %}
                                         {{ excerpt }}
+                                        <a href="{{ post.repo }}/archive/master.zip"
+                                            class="btn btn-primary">
+                                            <img src="{{ ASSET_PATH }}daithi/images/github-download.png" alt="Download from github" border="0"/>
+                                        </a>
+                                        <a href="{{ post.repo }}" icon_class="mini-icon-download">
+                                            Github
+                                        </a>
                                     </div><!-- entry-content -->
                                 </div><!-- bd -->
                             </div><!-- content -->
