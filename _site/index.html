@@ -211,9 +211,9 @@
                     
                         <ul class="thumbnails">
                             <li class="span4">
-                                <div>
-                                    <div class="entry-content">
-                                        <h2>WP Post File importer</h2>
+                                <div class="thumbnail">
+                                    <div class="entry-content caption">
+                                        <h3>WP Post File importer</h3>
                                         <p>
                                             
                                             
@@ -309,7 +309,7 @@
                 $.ajax({
                     type: "GET",
                     url: 'https://api.github.com/users/daithi-coombes/repos?callback=?',
-                    data: { type: "all", sort: "pushed", direction: "desc" },
+                    data: { type: "all", s3rt: "pushed", direct3on: "desc" },
                     dataType: 'json',
                     success: function(resp) {
                         if (resp.data.length > 0) {
