@@ -25,10 +25,10 @@ tagline: wordpress php plugins
 <div class="tab-content">
     <div class="tab-pane active" id="repo-live">
         <div class="row-fluid">
-            {% for post in site.posts %}
-                {% for tag in post.tags %}
-                    {% if tag == 'live' %}
-                        <ul class="thumbnails">
+           <ul class="thumbnails">
+                {% for post in site.posts %}
+                    {% for tag in post.tags %}
+                        {% if tag == 'live' %}
                             <li class="span4">
                                 <div class="thumbnail">
                                     <div class="entry-content caption">
@@ -49,17 +49,18 @@ tagline: wordpress php plugins
                                     <hr/>
                                 </div>
                             </li>
-                        </ul>
-                    {% endif %}
+                        {% endif %}
+                    {% endfor %}
                 {% endfor %}
-            {% endfor %}
+            </ul>
         </div>
     </div>
     <div id="repo-dev" class="tab-pane">
-            {% for post in site.posts %}
-                {% for tag in post.tags %}
-                    {% if tag == 'dev' %}
-                        <ul class="thumbnails">
+        <div class="row-fluid">
+           <ul class="thumbnails">
+                {% for post in site.posts %}
+                    {% for tag in post.tags %}
+                        {% if tag == 'dev' %}
                             <li class="span4">
                                 <div class="thumbnail">
                                     <div class="entry-content caption">
@@ -80,22 +81,24 @@ tagline: wordpress php plugins
                                     <hr/>
                                 </div>
                             </li>
-                        </ul>
-                    {% endif %}
+                        {% endif %}
+                    {% endfor %}
                 {% endfor %}
-            {% endfor %}
+            </ul>
+        </div>
     </div>
     <div id="repo-icebox" class="tab-pane">
-            {% for post in site.posts %}
-                {% for tag in post.tags %}
-                    {% if tag == 'icebox' %}
-                        <ul class="thumbnails">
+        <div class="row-fluid">
+           <ul class="thumbnails">
+                {% for post in site.posts %}
+                    {% for tag in post.tags %}
+                        {% if tag == 'icebox' %} 
                             <li class="span4">
                                 <div class="thumbnail">
                                     <div class="entry-content caption">
                                         <h3>{{ post.title }}</h3>
-                                        <p3
-                   3                        {% capture excerpt %}
+                                        <p>
+                                            {% capture excerpt %}
                                                 {{ post.content | truncatewords: 20, '' }}
                                             {% endcapture %}
                                             {{ excerpt }}
@@ -110,10 +113,11 @@ tagline: wordpress php plugins
                                     <hr/>
                                 </div>
                             </li>
-                        </ul>
-                    {% endif %}
+                        {% endif %}
+                    {% endfor %}
                 {% endfor %}
-            {% endfor %}
+            </ul>
+        </div>
     </div>
 
     <div id="repo-all" class="tab-pane">
