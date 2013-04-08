@@ -30,24 +30,24 @@ tagline: wordpress php plugins
                     {% if tag == 'live' %}
                         <ul class="thumbnails">
                             <li class="span4">
-                            <article class="thumbnail">
-                                <div class="entry-content caption">
-                                    <h3>{{ post.title }}</h3>
-                                    <p>
-                                        {% capture excerpt %}
-                                            {{ post.content | truncatewords: 20, '' }}
-                                        {% endcapture %}
-                                        {{ excerpt }}
-                                    </p>
-                                    <a href="http://github.com/{{ site.github.user }}/{{ post.repo }}/archive/master.zip">
-                                        <img src="{{ ASSET_PATH }}daithi/images/github-download-zip.png" alt="Download from github" border="0"/>
-                                    </a>
-                                    <a href="http://github.com/{{ site.github.user }}/{{ post.repo }}" icon_class="mini-icon-download" class="btn">
-                                        Browse Code
-                                    </a>
-                                </div><!-- entry-content -->
-                                <hr/>
-                            </article>
+                                <div class="thumbnail">
+                                    <div class="entry-content caption">
+                                        <h3>{{ post.title }}</h3>
+                                        <p>
+                                            {% capture excerpt %}
+                                                {{ post.content | truncatewords: 20, '' }}
+                                            {% endcapture %}
+                                            {{ excerpt }}
+                                        </p>
+                                        <a href="http://github.com/{{ site.github.user }}/{{ post.repo }}/archive/master.zip">
+                                            <img src="{{ ASSET_PATH }}daithi/images/github-download-zip.png" alt="Download from github" border="0"/>
+                                        </a>
+                                        <a href="http://github.com/{{ site.github.user }}/{{ post.repo }}" icon_class="mini-icon-download" class="btn">
+                                            Browse Code
+                                        </a>
+                                    </div><!-- entry-content -->
+                                    <hr/>
+                                </div>
                             </li>
                         </ul>
                     {% endif %}
@@ -61,24 +61,24 @@ tagline: wordpress php plugins
                     {% if tag == 'dev' %}
                         <ul class="thumbnails">
                             <li class="span4">
-                            <article>
-                                <div class="entry-content">
-                                    <h2>{{ post.title }}</h2>
-                                    <p>
-                                        {% capture excerpt %}
-                                            {{ post.content | truncatewords: 20, '' }}
-                                        {% endcapture %}
-                                        {{ excerpt }}
-                                    </p>
-                                    <a href="http://github.com/{{ site.github.user }}/{{ post.repo }}/archive/master.zip">
-                                        <img src="{{ ASSET_PATH }}daithi/images/github-download-zip.png" alt="Download from github" border="0"/>
-                                    </a>
-                                    <a href="http://github.com/{{ site.github.user }}/{{ post.repo }}" icon_class="mini-icon-download" class="btn">
-                                        Browse Code
-                                    </a>
-                                </div><!-- entry-content -->
-                                <hr/>
-                            </article>
+                                <div>
+                                    <div class="entry-content">
+                                        <h2>{{ post.title }}</h2>
+                                        <p>
+                                            {% capture excerpt %}
+                                                {{ post.content | truncatewords: 20, '' }}
+                                            {% endcapture %}
+                                            {{ excerpt }}
+                                        </p>
+                                        <a href="http://github.com/{{ site.github.user }}/{{ post.repo }}/archive/master.zip">
+                                            <img src="{{ ASSET_PATH }}daithi/images/github-download-zip.png" alt="Download from github" border="0"/>
+                                        </a>
+                                        <a href="http://github.com/{{ site.github.user }}/{{ post.repo }}" icon_class="mini-icon-download" class="btn">
+                                            Browse Code
+                                        </a>
+                                    </div><!-- entry-content -->
+                                    <hr/>
+                                </div>
                             </li>
                         </ul>
                     {% endif %}
@@ -91,24 +91,24 @@ tagline: wordpress php plugins
                     {% if tag == 'icebox' %}
                         <ul class="thumbnails">
                             <li class="span4">
-                            <article>
-                                <div class="entry-content">
-                                    <h2>{{ post.title }}</h2>
-                                    <p>
-                                        {% capture excerpt %}
-                                            {{ post.content | truncatewords: 20, '' }}
-                                        {% endcapture %}
-                                        {{ excerpt }}
-                                    </p>
-                                    <a href="http://github.com/{{ site.github.user }}/{{ post.repo }}/archive/master.zip">
-                                        <img src="{{ ASSET_PATH }}daithi/images/github-download-zip.png" alt="Download from github" border="0"/>
-                                    </a>
-                                    <a href="http://github.com/{{ site.github.user }}/{{ post.repo }}" icon_class="mini-icon-download" class="btn">
-                                        Browse Code
-                                    </a>
-                                </div><!-- entry-content -->
-                                <hr/>
-                            </article>
+                                <div>
+                                    <div class="entry-content">
+                                        <h2>{{ post.title }}</h2>
+                                        <p>
+                                            {% capture excerpt %}
+                                                {{ post.content | truncatewords: 20, '' }}
+                                            {% endcapture %}
+                                            {{ excerpt }}
+                                        </p>
+                                        <a href="http://github.com/{{ site.github.user }}/{{ post.repo }}/archive/master.zip">
+                                            <img src="{{ ASSET_PATH }}daithi/images/github-download-zip.png" alt="Download from github" border="0"/>
+                                        </a>
+                                        <a href="http://github.com/{{ site.github.user }}/{{ post.repo }}" icon_class="mini-icon-download" class="btn">
+                                            Browse Code
+                                        </a>
+                                    </div><!-- entry-content -->
+                                    <hr/>
+                                </div>
                             </li>
                         </ul>
                     {% endif %}
