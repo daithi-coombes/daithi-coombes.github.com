@@ -1,7 +1,7 @@
 ---
 layout: page
-title: CityIndex - Labs Team
-tagline: Labs Team projects
+title: Daithi Coombes
+tagline: wordpress php plugins
 ---
 {% include JB/setup %}
 
@@ -11,78 +11,142 @@ tagline: Labs Team projects
         <a href="#repo-live" data-toggle="tab">Live</a>
     </li>
     <li>
-        <a href="#repo-build" data-toggle="tab">Build</a>
+        <a href="#repo-dev" data-toggle="tab">Dev</a>
     </li>
     <li>
         <a href="#repo-icebox" data-toggle="tab">Icebox</a>
+    </li>
+    <li>
+        <a href="#repo-all" data-toggle="tab">All</a>
     </li>
 </ul>
 </div>
 
 <div class="tab-content">
     <div class="tab-pane active" id="repo-live">
-        {% for post in site.posts %}
-            {% for tag in post.tags %}
-                {% if tag == 'live' %}
-                    <article class="unit-article layout-post">
-                        <div class="unit-inner unit-article-inner">
-                            <div class="content">
-                                <div class="bd">
-                                    <div class="entry-content">
-                                        {{ post.title }}
+        <div class="row-fluid">
+            {% for post in site.posts %}
+                {% for tag in post.tags %}
+                    {% if tag == 'live' %}
+                        <ul class="thumbnails">
+                            <li class="span4">
+                            <article class="thumbnail">
+                                <div class="entry-content caption">
+                                    <h3>{{ post.title }}</h3>
+                                    <p>
                                         {% capture excerpt %}
                                             {{ post.content | truncatewords: 20, '' }}
                                         {% endcapture %}
                                         {{ excerpt }}
-                                        <a href="{{ post.repo }}/archive/master.zip"
-                                            class="btn btn-primary">
-                                            <img src="{{ ASSET_PATH }}daithi/images/github-download.png" alt="Download from github" border="0"/>
-                                        </a>
-                                        <a href="{{ post.repo }}" icon_class="mini-icon-download">
-                                            Github
-                                        </a>
-                                    </div><!-- entry-content -->
-                                </div><!-- bd -->
-                            </div><!-- content -->
-                        </div><!-- unit-inner -->
-                        <hr/>
-                    </article>
-                {% endif %}
+                                    </p>
+                                    <a href="http://github.com/{{ site.github.user }}/{{ post.repo }}/archive/master.zip">
+                                        <img src="{{ ASSET_PATH }}daithi/images/github-download-zip.png" alt="Download from github" border="0"/>
+                                    </a>
+                                    <a href="http://github.com/{{ site.github.user }}/{{ post.repo }}" icon_class="mini-icon-download" class="btn">
+                                        Browse Code
+                                    </a>
+                                </div><!-- entry-content -->
+                                <hr/>
+                            </article>
+                            </li>
+                        </ul>
+                    {% endif %}
+                {% endfor %}
             {% endfor %}
-        {% endfor %}
+        </div>
     </div>
-    <div class="tab-pane active" id="repo-live">
+    <div id="repo-dev" class="tab-pane">
+            {% for post in site.posts %}
+                {% for tag in post.tags %}
+                    {% if tag == 'dev' %}
+                        <ul class="thumbnails">
+                            <li class="span4">
+                            <article>
+                                <div class="entry-content">
+                                    <h2>{{ post.title }}</h2>
+                                    <p>
+                                        {% capture excerpt %}
+                                            {{ post.content | truncatewords: 20, '' }}
+                                        {% endcapture %}
+                                        {{ excerpt }}
+                                    </p>
+                                    <a href="http://github.com/{{ site.github.user }}/{{ post.repo }}/archive/master.zip">
+                                        <img src="{{ ASSET_PATH }}daithi/images/github-download-zip.png" alt="Download from github" border="0"/>
+                                    </a>
+                                    <a href="http://github.com/{{ site.github.user }}/{{ post.repo }}" icon_class="mini-icon-download" class="btn">
+                                        Browse Code
+                                    </a>
+                                </div><!-- entry-content -->
+                                <hr/>
+                            </article>
+                            </li>
+                        </ul>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
     </div>
-    <div class="tab-pane active" id="repo-live">
+    <div id="repo-icebox" class="tab-pane">
+            {% for post in site.posts %}
+                {% for tag in post.tags %}
+                    {% if tag == 'icebox' %}
+                        <ul class="thumbnails">
+                            <li class="span4">
+                            <article>
+                                <div class="entry-content">
+                                    <h2>{{ post.title }}</h2>
+                                    <p>
+                                        {% capture excerpt %}
+                                            {{ post.content | truncatewords: 20, '' }}
+                                        {% endcapture %}
+                                        {{ excerpt }}
+                                    </p>
+                                    <a href="http://github.com/{{ site.github.user }}/{{ post.repo }}/archive/master.zip">
+                                        <img src="{{ ASSET_PATH }}daithi/images/github-download-zip.png" alt="Download from github" border="0"/>
+                                    </a>
+                                    <a href="http://github.com/{{ site.github.user }}/{{ post.repo }}" icon_class="mini-icon-download" class="btn">
+                                        Browse Code
+                                    </a>
+                                </div><!-- entry-content -->
+                                <hr/>
+                            </article>
+                            </li>
+                        </ul>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+    </div>
+
+    <div id="repo-all" class="tab-pane">
+        <div class="row-fluid">
+            {% include JB/github %}
+            <script type="text/javascript">
+            // <!--
+                $.ajax({
+                    type: "GET",
+                    url: 'https://api.github.com/users/{{ site.github.user }}/repos?callback=?',
+                    data: { type: "all", sort: "pushed", direction: "desc" },
+                    dataType: 'json',
+                    success: function(resp) {
+                        if (resp.data.length > 0) {
+                            $('#gh_repos').html('<ul></ul>');
+                            for(var i = 0; i < $(resp.data).length; i++)
+                            {
+                               $('#gh_repos > ul').append(
+                                    '<li><a href="' + resp.data[i]['html_url'] + '">'
+                                    + resp.data[i]['name'] + '</a>'
+                                    + '<p>'
+                                    + (resp.data[i]['description'] ? resp.data[i]['description'] : '(No description)')
+                                    + '</p></li>'
+                                );
+                            }
+                        }
+                        else {
+                            $('#gh_repos').html('<p>No public repositories.</p>');
+                        }
+                    }
+                });
+            // -->
+            </script>
+        </div>
     </div>
 </div>
-
-{% include JB/github %}
-<script type="text/javascript">
-// <!--
-    $.ajax({
-        type: "GET",
-        url: 'https://api.github.com/users/{{ site.github.user }}/repos?callback=?',
-        data: { type: "all", sort: "pushed", direction: "desc" },
-        dataType: 'json',
-        success: function(resp) {
-            if (resp.data.length > 0) {
-                $('#gh_repos').html('<ul></ul>');
-                for(var i = 0; i < $(resp.data).length; i++)
-                {
-                   $('#gh_repos > ul').append(
-                        '<li><a href="' + resp.data[i]['html_url'] + '">'
-                        + resp.data[i]['name'] + '</a>'
-                        + '<p>'
-                        + (resp.data[i]['description'] ? resp.data[i]['description'] : '(No description)')
-                        + '</p></li>'
-                    );
-                }
-            }
-            else {
-                $('#gh_repos').html('<p>No public repositories.</p>');
-            }
-        }
-    });
-// -->
-</script>
