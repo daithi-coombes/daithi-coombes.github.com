@@ -4,6 +4,7 @@ title: "WP Autoflow"
 description: ""
 categories: [Wordpress, API Con Mngr Plugins]
 tags: [live]
+repo: autoflow
 ---
 {% include JB/setup %}
 
